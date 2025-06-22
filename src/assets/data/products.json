@@ -1,0 +1,69 @@
+[
+  {
+    "id": 1,
+    "name": "SENARU 2P",
+    "brand" : "Eiger Adventure",
+    "location" : "Katapapang, Jawa Barat",
+    "price": 1669000,
+    "description": "Senaru 2P adalah tenda kemah untuk kapasitas 2 orang yang cocok digunakan untuk kegiatan berkemah dan hiking. Tenda ini memiliki tiang rangka berbahan duraluminium yang mudah dipasangkan, satu akses pintu masuk dan mesh sebagai ventilasi. Ketika tidak dipakai, Anda bisa menyimpannya kembali di carry bag. Inner tent: (60+140+60) x 150cm x 100cm, Packing size: 60x40x25 cmFitur:- Tiang rangka aluminium- Satu akses pintu masuk- Mudah dipasang- Mesh untuk ventilasi",
+    "image": {
+        "image1" : "/src/assets/products/eiger/tenda-senaru2p-1.jpg",
+        "image2" : "/src/assets/products/eiger/tenda-senaru2p-2.jpg",
+        "image3" : "/src/assets/products/eiger/tenda-senaru2p-3.jpg"
+    },
+    "category": "Tenda"
+  },
+  {
+    "id": 2,
+    "name": "SHIPTON 3P",
+    "brand" : "Eiger Adventure",
+    "location" : "Katapapang, Jawa Barat",
+    "price": 2239000,
+    "description": "Shipton 3P adalah tenda kemah untuk kapasitas 3 orang yang cocok digunakan untuk kegiatan berkemah dan hiking. Tenda ini memiliki tiang rangka berbahan duraluminium yang mudah dipasangkan, satu akses pintu masuk dan mesh sebagai ventilasi. Ketika tidak dipakai, Anda bisa menyimpannya kembali di carry bag. Inner tent: (210+50) x 180cm x 120cm, Packing size: 62x48x30 cmFitur:- Tiang rangka aluminium- Satu akses pintu masuk- Mudah dipasang- Mesh untuk ventilasi",
+    "image": {
+        "image1" : "/src/assets/products/eiger/tenda-shipton3p-1.png",
+        "image2" : "/src/assets/products/eiger/tenda-shipton3p-2.png",
+        "image3" : "/src/assets/products/eiger/tenda-shipton3p-3.png"
+    },
+    "category": "Tenda"
+  },
+  {
+    "id": 3,
+    "name": "EMERGENCY SLEEPING BAG",
+    "brand" : "Eiger Adventure",
+    "location" : "Katapapang, Jawa Barat",
+    "price": 46550,
+    "description": "Emergency Sleeping Bag didesain untuk menemani Anda ketika melakukan kegiatan berkemah atau saat berada di luar ruangan. Selimut ini menjaga kehangatan tubuh saat malam hari disaat cuaca sejuk dan memberikan kenyamanan saat tidur di alam terbuka. Produk ini memberikan kenyamanan dengan bahan yang ringan, sehingga memudahkan Anda untuk membawanya disaat berpergian.Fitur:- Sangat ringan dan reflektif- Perlindungan darurat dari suhu dingin- Bahan tidak tahan api",
+    "image": {
+        "image1" : "/src/assets/products/eiger/sleaping-emergency.png"
+    },
+    "category": "Kantong tidur"
+  },
+  {
+    "id": 4,
+    "name": "CAPULLO 70",
+    "brand" : "Eiger Adventure",
+    "location" : "Katapapang, Jawa Barat",
+    "price": 499000,
+    "description": "Nikmati tidur nyenyak saat cuaca dingin dengan Capullo 70 dari EIGER Mountaineering. Sleeping bag ini terbuat dari bahan poliester yang tahan lama dan hangat, dengan bukaan ritsleting di bagian samping yang memudahkanmu saat masuk atau keluar. Dilengkapi tali adjuster untuk menyesuaikan kenyamanan, serta saku dalam untuk menyimpan barang kecil yang penting agar tetap dekat. Setelah digunakan, kamu bisa dengan mudah menyimpannya dalam tas agar ringkas dan siap dibawa ke mana pun kamu bertualang.",
+    "image": {
+        "image1" : "/src/assets/products/eiger/sleaping-capsullo70-1.png",
+        "image2" : "/src/assets/products/eiger/sleaping-capsullo70-2.png",
+        "image3" : "/src/assets/products/eiger/sleaping-capsullo70-3.png"
+    },
+    "category": "Kantong tidur"
+  },
+  {
+    "id": 5,
+    "name": "COOKING SET 1.0",
+    "brand" : "Eiger Adventure",
+    "location" : "Katapapang, Jawa Barat",
+    "price": 431050,
+    "description": "Ketika saatnya tiba untuk mempersiapkan makanan lezat saat bertualang di alam terbuka, Cooking Set 1.0 yang ringkas dan ringan ini bisa menjadi andalan. Memasak di luar ruangan akan lebih menyenangkan dan mudah dengan satu set lengkap yang terdiri dari panci dan wajan dari Cooking Set 1.0 ini. Terbuat dari aluminium anodized berkualitas, membuat Cooking Set 1.0 ini memilki ketahan terhadap gores, tahan lengket serta mudah dibersihkan yang cocok untuk menemani Anda memasak dan menyiapkan makanan saat melakukan kegiatan luar ruang.",
+    "image": {
+        "image1" : "/src/assets/products/eiger/masak-set1-1.png",
+        "image2" : "/src/assets/products/eiger/masak-set1-2.png"
+    },
+    "category": "Set makan"
+  }
+]
