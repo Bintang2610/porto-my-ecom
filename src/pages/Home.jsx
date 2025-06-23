@@ -26,6 +26,10 @@ function Home() {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+    window.scrollTo(0, 0);
+  },[]);
+
     const prevSlide = () => setCurrent(current === 0 ? images.length - 1 : current - 1);
     const nextSlide = () => setCurrent((current + 1) % images.length);
     
@@ -118,7 +122,7 @@ function Home() {
                     <div className="w-full px-3 flex flex-row">
                         <h2 className='text-lg font-semibold text-gray-600'>Baru-baru ini anda lihat</h2>
                     </div>
-                    <CardSlider gap={[6]} />
+                    <CardSlider gap={[4]} />
                 </div>
             </div>
             <div className="w-full h-full flex justify-center my-6">
@@ -142,7 +146,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <CardSlider gap={5} />
+                    <CardSlider gap={4} />
                 </div>
             </div>
             <div className="w-full h-full flex justify-center mb-18">
