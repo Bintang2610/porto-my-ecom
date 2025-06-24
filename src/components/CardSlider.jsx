@@ -5,18 +5,18 @@ import Card from '../components/Card.jsx';
 
 import product from '../assets/data/products.json';
 
-function CardSlider({ gap }) {
+function CardSlider() {
 
     const scrollRef = useRef(null);
 
     const scrollLeft = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: -198, behavior: 'smooth' }); 
+            scrollRef.current.scrollBy({ left: -215, behavior: 'smooth' }); 
         }
     };
     const scrollRight = () => {
         if (scrollRef.current) {
-            scrollRef.current.scrollBy({ left: 198, behavior: 'smooth' }); 
+            scrollRef.current.scrollBy({ left: 215, behavior: 'smooth' }); 
         }
     };
 
@@ -31,8 +31,8 @@ function CardSlider({ gap }) {
                     </button>
                     <div
                         ref={scrollRef}
-                        className={`w-full h-full flex flex-row gap-${gap} overflow-x-auto 
-                        scroll-smooth hide-scrollbar border-r border-l border-gray-200 rounded-md`}
+                        className={`w-full h-full py-2 flex flex-row gap-8 overflow-x-auto 
+                        scroll-smooth hide-scrollbar`}
                         style={{ scrollBehavior: 'smooth' }}
                     >
                         {product.map((item) => (

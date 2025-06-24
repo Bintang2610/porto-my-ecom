@@ -81,34 +81,34 @@ function Home() {
                         <div className="w-220 h-30 p-4 bg-[#FEFFFF] shadow rounded-xl border-gray-200 
                         flex flex-col gap-3 text-left">
                             <div className="flex-1 flex flex-row items-center px-3 gap-3">
-                                <h2 className='text-lg font-semibold text-gray-600'>Temukan semua kebutuhan jelajah Anda bersama kami!</h2>
+                                <h2 className='text-lg font-semibold text-gray-700'>Temukan semua kebutuhan jelajah Anda bersama kami!</h2>
                                 <Link to="/Asisten" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
                                 rounded-md border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faRobot} className='mr-2' />Packify Guide
+                                    <FontAwesomeIcon icon={faRobot} className='mr-2 text-gray-500' />Packify Guide
                                 </Link>
                             </div>
                             <div className="px-2 flex-1 flex items-center justify-between">
                                 <Link to="/Kategori" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faTent} className='mr-2' />Tenda
+                                    <FontAwesomeIcon icon={faTent} className='mr-2 text-red-400' />Tenda
                                 </Link>
                                 <Link to="/Kategori" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faShirt} className='mr-2' />Pakaian
+                                    <FontAwesomeIcon icon={faShirt} className='mr-2 text-blue-800' />Pakaian
                                 </Link>
                                 <Link to="/Kategori" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faKitchenSet} className='mr-2' />Perlengkapan makan
+                                    <FontAwesomeIcon icon={faKitchenSet} className='mr-2 text-yellow-500' />Perlengkapan makan
                                 </Link>
                                 <Link to="/Kategori" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faToolbox} className='mr-2' />Peralatan survival
+                                    <FontAwesomeIcon icon={faToolbox} className='mr-2 text-gray-700' />Peralatan survival
                                 </Link>
                                 <Link to="/Kategori" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faBagShopping} className='mr-2' />Ransel & tas 
+                                    <FontAwesomeIcon icon={faBagShopping} className='mr-2 text-green-600' />Ransel & tas 
                                 </Link>
-                                <Link to="/Kategori" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                                <Link to="/Kategori" className='py-2 px-3 cursor-pointer bg-gray-200 hover:bg-gray-50 border-gray-300 text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faList} className='mr-2' />Kategori
                                 </Link>
@@ -122,7 +122,7 @@ function Home() {
                     <div className="w-full px-3 flex flex-row">
                         <h2 className='text-lg font-semibold text-gray-600'>Baru-baru ini anda lihat</h2>
                     </div>
-                    <CardSlider gap={[4]} />
+                    <CardSlider />
                 </div>
             </div>
             <div className="w-full h-full flex justify-center my-6">
@@ -146,7 +146,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                    <CardSlider gap={4} />
+                    <CardSlider />
                 </div>
             </div>
             <div className="w-full h-full flex justify-center mb-18">

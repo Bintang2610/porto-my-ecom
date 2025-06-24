@@ -15,6 +15,14 @@
         "image3" : "/src/assets/products/eiger/tenda-senaru2p-3.jpg"
     },
     "category": "Tenda",
+    "tag" : ["Perlengkapan"],
+    "type" : {
+      "type1" : {
+        "name" : "Orange",
+        "image" : "/src/assets/products/eiger/tenda-senaru2p-1.jpg",
+        "stock" : 12
+      }
+    },
     "rating": 0,
     "sold": 200
   },
@@ -34,6 +42,14 @@
         "image3" : "/src/assets/products/eiger/tenda-shipton3p-3.png"
     },
     "category": "Tenda",
+    "tag" : ["Perlengkapan"],
+    "type" : {
+      "type1" : {
+        "name" : "Yellow",
+        "image" : "/src/assets/products/eiger/tenda-shipton3p-1.png",
+        "stock" : 12
+      }
+    },
     "rating": 0,
     "sold": 24
   },
@@ -51,6 +67,14 @@
         "image1" : "/src/assets/products/eiger/sleaping-emergency.png"
     },
     "category": "Kantong tidur",
+    "tag" : ["Perlengkapan"],
+    "type" : {
+      "type1" : {
+        "name" : "Silver",
+        "image" : "/src/assets/products/eiger/sleaping-emergency.png",
+        "stock" : 12
+      }
+    },
     "rating": 0,
     "sold": 0
   },
@@ -70,6 +94,19 @@
         "image3" : "/src/assets/products/eiger/sleaping-capsullo70-3.png"
     },
     "category": "Kantong tidur",
+    "tag" : ["Perlengkapan"],
+    "type" : {
+      "type1" : {
+        "name" : "Green",
+        "image" : "/src/assets/products/eiger/sleaping-capsullo70-1.png",
+        "stock" : 12
+      },
+      "type2" : {
+        "name" : "Yellow",
+        "image" : "/src/assets/products/eiger/sleaping-capsullo70-3.png",
+        "stock" : 6
+      }
+    },
     "rating": 0,
     "sold": 12
   },
@@ -88,6 +125,73 @@
         "image2" : "/src/assets/products/eiger/masak-set1-2.png"
     },
     "category": "Set makan",
+    "tag" : ["Perlengkapan"],
+    "type" : {
+      "type1" : {
+        "name" : "Orange",
+        "image" : "/src/assets/products/eiger/masak-set1-1.png",
+        "stock" : 12
+      }
+    },
+    "rating": 0,
+    "sold": 2
+  },
+  {
+    "id": 6,
+    "name": "JUNIOR MOORLAND BACKPACK 15L 1.0",
+    "brand" : {
+      "name" : "Eiger Adventure",
+      "image" : "https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/910004506_ORANGE_2_885c.jpg"
+    },
+    "location" : "Katapapang, Jawa Barat",
+    "price": 339000,
+    "description": "Bersiaplah untuk petualangan yang penuh keseruan dengan menggunakan JR Moorland Backpack 15L 1.0. Tas berkapasitas 15 liter dari EIGER Junior ini memiliki kompartemen utama yang dapat memuat semua perlengkapan dengan rapi. Di bagian depan terdapat dua saku yang cocok digunakan untuk menyimpan barang-barang kecil dan terdapat pula dua saku samping untuk menaruh botol minum.",
+    "image": {
+        "image1" : "/src/assets/products/eiger/tas-junior-1.png",
+        "image2" : "/src/assets/products/eiger/tas-junior-2.png",
+        "image3" : "/src/assets/products/eiger/tas-junior-3.png"
+    },
+    "category": "Tas",
+    "tag" : ["Perlengkapan"],
+    "type" : {
+      "type1" : {
+        "name" : "Mustard",
+        "image" : "/src/assets/products/eiger/tas-junior-1.png",
+        "stock" : 12
+      },
+      "type2" : {
+        "name" : "Blue",
+        "image" : "/src/assets/products/eiger/tas-junior-3.png",
+        "stock" : 8
+      }
+    },
+    "rating": 0,
+    "sold": 2
+  },
+  {
+    "id": 7,
+    "name": "FUNFUSION WOMEN'S JACKET",
+    "brand" : {
+      "name" : "Eiger Adventure",
+      "image" : "https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/910004506_ORANGE_2_885c.jpg"
+    },
+    "location" : "Katapapang, Jawa Barat",
+    "price": 769000,
+    "description": "Funfusion Women Jacket cocok dipakai untuk stretching ataupun hangout bersama teman di hari-hari aktif. Jaket wanita dari EIGER Act ini dilengkapi ventilasi ganda di bagian depan dan belakang untuk tubuhmu tetap merasa sejuk saat berkegiatan aktif. Teknologi windbreaker pada jaket ini melindungi tubuh dari angin agar kamu tetap nyaman bergerak.",
+    "image": {
+        "image1" : "/src/assets/products/eiger/jaket-funfusion-1.png",
+        "image2" : "/src/assets/products/eiger/jaket-funfusion-2.png"
+    },
+    "category": "Jaket",
+    "tag" : ["Pakaian"],
+    "type" : {
+      "type1" : {
+        "name" : "Off White",
+        "image" : "/src/assets/products/eiger/jaket-funfusion-1.png",
+        "stock" : 12
+      }
+    },
+    "gender" : "Woman",
     "rating": 0,
     "sold": 2
   }
