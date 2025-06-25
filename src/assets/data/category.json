@@ -1,0 +1,30 @@
+[
+    {
+        "id" : 1,
+        "name" : "Perlengkapan",
+        "type" : {
+            "type1" : "Tenda",
+            "type2" : "Set makan",
+            "type3" : "Kantong tidur",
+            "type4" : "Tas"
+        }
+    },
+    {
+        "id" : 2,
+        "name" : "Pakaian",
+        "type" : {
+            "type1" : "Jaket",
+            "type2" : "Rompi",
+            "type3" : "Sepatu"
+        }
+    },
+    {
+        "id" : 3,
+        "name" : "Aksesoris",
+        "type" : {
+            "type1" : "Jaket",
+            "type2" : "Rompi",
+            "type3" : "Sepatu"
+        }
+    }
+]

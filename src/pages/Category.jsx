@@ -1,35 +1,30 @@
-import { useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import productData from '../assets/data/products.json';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Card from '../components/Card';
+import { useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleCheck, faStar, faXmark } from '@fortawesome/free-solid-svg-icons';
+import productData from "../assets/data/products.json";
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
 
-function Search() {
-  const [showDropdown, setShowDropdown] = useState(false);
-  const query = useQuery();
+function Category() {
+    const [showDropdown, setShowDropdown] = useState(false);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
-  const [input, setInput] = useState(query.get('q') || '');
 
-  // Update input jika URL berubah (misal user tekan back/forward)
-  useEffect(() => {
-    setInput(query.get('q') || '');
-  }, [query.get('q')]);
+  const { t } = useParams();
+  const tLower = t.toLowerCase();
 
-  const results = input
-    ? productData.filter(
-        p =>
-          p.name.toLowerCase().includes(input.toLowerCase()) ||
-          p.category.toLowerCase().includes(input.toLowerCase())
-      )
-    : [];
+  const results = productData.filter(
+  p =>
+    p.category.toLowerCase() === tLower ||
+    (Array.isArray(p.type)
+      ? p.type.some(x => typeof x === 'string' && x.toLowerCase() === tLower)
+      : typeof p.type === "object" && p.type
+      ? Object.values(p.type).some(x => typeof x === 'string' && x.toLowerCase() === tLower)
+      : false)
+);
 
     useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,14 +50,25 @@ function Search() {
     setMaxPrice(formatted);
   };
 
-  return (
-    <div className="bg-white min-h-screen">
+  const originalCategory =
+  productData.find(
+    p =>
+      p.category.toLowerCase() === tLower ||
+      (Array.isArray(p.type)
+        ? p.type.some(x => typeof x === 'string' && x.toLowerCase() === tLower)
+        : typeof p.type === "object" && p.type
+        ? Object.values(p.type).some(x => typeof x === 'string' && x.toLowerCase() === tLower)
+        : false)
+  )?.category || t;
+
+    return (
+        <div className="bg-white min-h-screen">
         <Navbar />
         <div className="w-full min-h-screen flex justify-center py-20">
             <div className="w-214 h-full flex flex-col text-left">
                 <div className="w-full py-2 flex flex-col sticky top-18 z-40 bg-white gap-2">
                     <div className="w-full px-3 flex items-center justify-between mt-1">
-                      <h2 className='text-lg font-semibold text-gray-600'>Hasil Pencarian: <span className='text-blue-400'>{input}</span></h2>
+                      <h2 className='text-lg font-semibold text-gray-600'>Kategori <span className='text-green-600'>{originalCategory}</span></h2>
                       <button className={`${showDropdown ? `py-2 px-3` : `py-1 px-4`} flex items-center justify-center hover:bg-gray-100 bg-white rounded-full border border-gray-500 cursor-pointer`} onMouseDown={showDropdown ? mouseClick2 : mouseClick}>
                         {showDropdown ? <FontAwesomeIcon icon={faXmark} className='text-lg' /> : 'Filter'}
                       </button>
@@ -111,22 +117,20 @@ function Search() {
                     </div>
                     )}
                 </div>
-                {input === '' ? (
-                <div className="text-gray-500">Masukkan kata kunci pencarian.</div>
-                ) : results.length === 0 ? (
-                <div className="text-gray-500">Tidak ada produk ditemukan.</div>
-                ) : (
-                <div className="w-full grid grid-cols-4 gap-4">
-                    {results.map((item) => (
-                    <Card key={item.id} product={item}/>
-                    ))}
-                </div>
-                )}
+                    {results.length === 0 ? (
+                    <div className="text-gray-500">Tidak ada produk ditemukan.</div>
+                    ) : (
+                    <div className="w-full grid grid-cols-4 gap-4">
+                        {results.map(item => (
+                        <Card key={item.id} product={item} />
+                        ))}
+                    </div>
+                    )}
             </div>
         </div>
         <Footer />
     </div>
-  );
+    )
 }
 
-export default Search;
+export default Category;

@@ -65,7 +65,7 @@ const images = product.image ? Object.values(product.image) : [];
                             <img
                             src={images[mainImgIdx]}
                             alt={product.name}
-                            className="h-full w-full ject-cover rounded-md"
+                            className="min-h-auto ject-cover rounded-md"
                             />
                         )}
                         </div>

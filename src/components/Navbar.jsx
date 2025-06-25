@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStore, faMagnifyingGlass, faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import productData from '../assets/data/products.json';
+import category from '../assets/data/category.json';
 
 function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
@@ -46,14 +47,18 @@ function Navbar() {
         }
     };
 
+    const closeDrop = () => {
+        setShowDropdown(false)
+    };
+
     return (
         <nav className='fixed top-0 right-0 left-0 z-50 w-full'>
             <div className="w-full h-18 px-10 bg-white z-50 border-b border-gray-200 items-center justify-between flex gap-2">
                 <Link to="/" className='text-lg'>Packify</Link>
                 <div className="flex items-center gap-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                    <button className='w-12 p-1 hover:py-3 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
-                    rounded-md transition-all duration-300'
-                    onMouseEnter={handleMouseEnter}
+                    <button className='w-12 p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
+                    rounded-md transition-all duration-300 flex justify-center'
+                        onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}>
                         <FontAwesomeIcon icon={faStore} />
                     </button>
@@ -116,23 +121,28 @@ function Navbar() {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                 >
-                    <div className="w-220 h-full">
-                        <div className="w-full h-full flex flex-col gap-1">
-                            <h2 className='text-md font-medium'>Kategori</h2>
+                    <div className="w-fit h-full">
+                        <div className="w-212 h-full flex flex-col px-3">
+                            <Link to="/category/all" className='text-md font-medium'>Kategori</Link>
                             <div className="w-full h-full flex flex-row justify-between">
-                                <div className="w-fit h-full my-3">
-                                    <div className="w-full">
-                                        <h2 className='font-semibold text-md mb-1'>Perlengkapan</h2>
-                                    </div>
-                                    <div className="w-full flex-1">
-                                        <div className='text-md text-gray-500 space-y-1 grid grid-cols-1'>
-                                            <Link to="/category/tas">Tas</Link>
-                                            <Link to="/category/tenda">Tenda</Link>
-                                            <Link to="/category/setmakan">Set Makan</Link>
-                                            <Link to="/category/Tas">Tas</Link>
-                                            <Link to="/category/Tas">Tas</Link>
+                                <div className="w-full h-full my-3 flex flex-row gap-6">
+                                {category.map((item) =>(
+                                    <div className="w-full h-fit flex flex-col gap-1">
+                                        <h2 className='font-semibold text-md mb-1'>{item.name}</h2>
+                                        <div className="w-full flex-1 grid grid-flow-col grid-rows-5 text-md text-gray-500 gap-y-1 gap-x-4">
+                                             {Array.isArray(item.type)
+                                            ? item.type.map((t, idx) => (
+                                                <Link to={`/category/${t.toLowerCase()}`} key={idx}>{t}</Link>
+                                            ))
+                                            : item.type && typeof item.type === 'object'
+                                            ? Object.values(item.type).map((t, idx) => (
+                                                <Link to={`/category/${t.toLowerCase()}`} onClick={closeDrop} key={idx}>{t}</Link>
+                                                ))
+                                            : null
+                                            }
                                         </div>
                                     </div>
+                                ))}
                                 </div>
                             </div>
                         </div>
