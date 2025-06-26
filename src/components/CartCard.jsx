@@ -12,7 +12,7 @@ function CartCard() {
                                         <button className="text-sm text-gray-500 text-left cursor-pointer">Lihat detail</button>
                                     </div>
                                     <div className="w-full h-fit p-3 bg-gray-100">
-                                        <p className="text-md font-semibold">Estimasi tiba 14 Juni - 15 Juni</p>
+                                        <p className="text-sm font-semibold">Estimasi tiba 14 Juni - 15 Juni</p>
                                     </div>
                                 </div>
                             </div>
