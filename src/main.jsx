@@ -9,6 +9,8 @@ import Search from './pages/Search.jsx';
 import CategoryAll from './pages/CategoryAll.jsx';
 import Category from './pages/Category.jsx';
 import Assistant from './pages/Assistant.jsx';
+import Wishlist from './pages/Wishlist.jsx';
+import Cart from './pages/Cart.jsx';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -17,6 +19,8 @@ const router = createBrowserRouter([
   { path: '/category/all', element: <CategoryAll /> },
   { path: '/category/:t', element: <Category /> },
   { path: '/assistant', element: <Assistant />},
+  { path: '/wishlist', element: <Wishlist />},
+  { path: '/cart', element: <Cart /> },
   { path: '*', element: <NotFoundPage /> },
 ]);
 

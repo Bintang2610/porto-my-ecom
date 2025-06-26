@@ -106,10 +106,10 @@ function Navbar() {
                     </div>
                 </div>
                 <div className="flex items-center gap-1">
-                    <button className='w-12 p-1 hover:py-3 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
-                    rounded-md transition-all duration-300'><FontAwesomeIcon icon={faHeart} /></button>
-                    <button className='w-12 p-1 hover:py-3 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
-                    rounded-md transition-all duration-300'><FontAwesomeIcon icon={faCartShopping} /></button>
+                    <Link to="/wishlist" className='w-12 flex justify-center p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
+                    rounded-md transition-all duration-300'><FontAwesomeIcon icon={faHeart} /></Link>
+                    <Link to="/cart" className='w-12 flex justify-center p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
+                    rounded-md transition-all duration-300'><FontAwesomeIcon icon={faCartShopping} /></Link>
                     <button className='w-20 text-sm ml-3 my-2 py-2 px-4 cursor-pointer border hover:border-3 
                     border-gray-400 rounded-md transiiton-all duration-300'>Masuk</button>
                 </div>
