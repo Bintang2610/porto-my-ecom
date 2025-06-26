@@ -108,8 +108,8 @@ function Home() {
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faBagShopping} className='mr-2 text-green-600' />Ransel & tas 
                                 </Link>
-                                <Link to="/category/all" className='py-2 px-3 cursor-pointer bg-gray-200 hover:bg-gray-50 border-gray-300 text-sm 
-                                rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
+                                <Link to="/category/all" className='py-2 px-3 cursor-pointer bg-gray-900 hover:bg-gray-50 border-black text-sm 
+                                rounded-full border-2 hover:border-gray-600 transition-all duration-300 text-white hover:text-black'>
                                     <FontAwesomeIcon icon={faList} className='mr-2' />Kategori
                                 </Link>
                             </div>
