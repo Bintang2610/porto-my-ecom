@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter, createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 import DetailProduct from './pages/DetailProduct.jsx';
@@ -22,7 +22,11 @@ const router = createBrowserRouter([
   { path: '/wishlist', element: <Wishlist />},
   { path: '/cart', element: <Cart /> },
   { path: '*', element: <NotFoundPage /> },
-]);
+],
+  {
+    basename: "/packify",
+  }
+);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
