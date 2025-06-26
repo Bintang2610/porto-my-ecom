@@ -31,7 +31,7 @@ function CardSlider() {
                     </button>
                     <div
                         ref={scrollRef}
-                        className={`w-full h-full py-2 flex flex-row gap-8 overflow-x-auto 
+                        className={`w-full h-full pb-2 flex flex-row gap-8 overflow-x-auto 
                         scroll-smooth hide-scrollbar`}
                         style={{ scrollBehavior: 'smooth' }}
                     >
