@@ -9,7 +9,7 @@ import productData from "../assets/data/products.json";
 
 
 function Category() {
-    const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
 
@@ -24,7 +24,7 @@ function Category() {
       : typeof p.type === "object" && p.type
       ? Object.values(p.type).some(x => typeof x === 'string' && x.toLowerCase() === tLower)
       : false)
-);
+  );
 
     useEffect(() => {
     window.scrollTo(0, 0);

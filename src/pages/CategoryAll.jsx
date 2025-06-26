@@ -8,8 +8,9 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 function CategoryAll() {
     useEffect(() => {
-    window.scrollTo(0, 0);
-  },[]);
+        window.scrollTo(0, 0);
+    },[]);
+
     return (
         <div className="relative bg-white">
             <Navbar />

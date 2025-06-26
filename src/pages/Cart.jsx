@@ -36,8 +36,6 @@ function Cart() {
                             <CartCard />
                             <CartCard />
                             <CartCard />
-                            <CartCard />
-                            <CartCard />
                         </div>
                     </div>
                     <div className="w-90 h-auto ml-4">

@@ -27,8 +27,8 @@ function Home() {
     }, []);
 
     useEffect(() => {
-    window.scrollTo(0, 0);
-  },[]);
+        window.scrollTo(0, 0);
+    },[]);
 
     const prevSlide = () => setCurrent(current === 0 ? images.length - 1 : current - 1);
     const nextSlide = () => setCurrent((current + 1) % images.length);

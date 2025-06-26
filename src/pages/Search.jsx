@@ -17,11 +17,11 @@ function Search() {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [input, setInput] = useState(query.get('q') || '');
+  const location = useLocation();
 
-  // Update input jika URL berubah (misal user tekan back/forward)
   useEffect(() => {
-    setInput(query.get('q') || '');
-  }, [query.get('q')]);
+  setInput(new URLSearchParams(location.search).get('q') || '');
+}, [location]);
 
   const results = input
     ? productData.filter(
