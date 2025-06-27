@@ -11,6 +11,7 @@ import Category from './pages/Category.jsx';
 import Assistant from './pages/Assistant.jsx';
 import Wishlist from './pages/Wishlist.jsx';
 import Cart from './pages/Cart.jsx';
+import Shop from './pages/shop.jsx';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
   { path: '/assistant', element: <Assistant />},
   { path: '/wishlist', element: <Wishlist />},
   { path: '/cart', element: <Cart /> },
+  { path: '/shop/:brand', element: <Shop />},
   { path: '*', element: <NotFoundPage /> },
 ],
   {

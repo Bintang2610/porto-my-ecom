@@ -60,13 +60,13 @@ const images = product.image ? Object.values(product.image) : [];
         <div className="w-full h-full flex flex-col py-18">
             <div className="w-full md:w-170 lg:w-220 px-6 md:px-0 md:mx-auto h-full flex flex-col sm:flex-row gap-1 sm:gap-6 md:gap-10">
                 <div className="w-full md:w-1/2 h-auto">
-                    <div className="w-full h-full sm:h-[86vh] flex flex-col sticky pt-4 top-18">
+                    <div className="w-full h-full sm:h-[60vh] md:h-[82vh] flex flex-col sticky pt-4 top-18">
                         <div className="w-full flex-1 flex items-center justify-center p-1 shadow-lg rounded-lg">
                         {images[mainImgIdx] && (
                             <img
                             src={getPublicImagePath(images[mainImgIdx])}
                             alt={product.name}
-                            className="h-[40vh] object-contain rounded-lg"
+                            className="h-[40vh] sm:h-full object-contain rounded-lg"
                             />
                         )}
                         </div>
@@ -85,7 +85,7 @@ const images = product.image ? Object.values(product.image) : [];
                 </div>
                 <div className='w-full md:w-1/2 h-full py-4 sm:py-10 flex flex-col gap-y-3'>
                     <div className="w-full flex flex-row justify-between items-center">
-                        <Link to={`/${product.category}`} className="text-xs py-1 px-3 bg-gray-200 rounded-md font-semibold text-gray-600">{product.category}</Link>
+                        <Link to={`/category/${product.category}`} className="text-xs py-1 px-3 bg-gray-200 rounded-md font-semibold text-gray-600">{product.category}</Link>
                         <button className='text-md flex flex-row items-center cursor-pointer'><FontAwesomeIcon icon={faStar} className='text-sm text-yellow-300 mr-2' />{product.rating}/5</button>
                     </div>
                     <h2 className='text-xl font-semibold w-full h-fit line-clamp-2'>{product.name}</h2>
@@ -156,17 +156,17 @@ const images = product.image ? Object.values(product.image) : [];
                     <div className="w-full h-full">
                         <div className="w-full h-full flex flex-row items-center border-2 border-gray-200 rounded-xl p-4">
                             <img src={product.brand?.image} className='w-10 lg:w-14 h-auto rounded-full' alt="" />
-                            <Link to="/eiger" className="flex-1 flex flex-row items-center justify-between pl-4">
+                            <Link to={`/shop/${product.brand?.name.toLocaleLowerCase()}`} className="flex-1 flex flex-row items-center justify-between pl-4">
                                 <div className="w-fit">
                                     <h2 className='font-semibold text-sm lg:text-md'>
-                                        <FontAwesomeIcon icon={faCircleCheck} className='mr-1 md:mr-2' />Eiger Adventure
+                                        <FontAwesomeIcon icon={faCircleCheck} className='mr-1 md:mr-2' />{product.brand?.name}
                                     </h2>
-                                    <p className='text-xs lg:text-sm'>Katapapang, Jawa Barat</p>
+                                    <p className='text-xs lg:text-sm'>{product.location}</p>
                                 </div>
-                                <Link to="/Eiger" className='hidden md:flex text-sm font-semibold text-gray-600 items-center justify-center border 
+                                <button className='hidden md:flex text-sm font-semibold text-gray-600 items-center justify-center border 
                                 border-gray-200 rounded-md py-2 px-3 hover:bg-gray-200 transition-all duration-300'>
                                     Lihat toko<FontAwesomeIcon icon={faArrowRight} className='ml-2' />
-                                </Link>
+                                </button>
                             </Link>
                         </div>
                     </div>

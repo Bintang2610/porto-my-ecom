@@ -36,10 +36,10 @@ function Home() {
     return (
         <div className="relative bg-white">
             <Navbar />
-            <div className="w-full h-[72vh]">
+            <div className="w-full h-[67vh] md:h-[77vh]">
                 <div className="h-full flex flex-col relative overflow-hidden">
                     <div
-                        className="w-full h-[65vh] relative"
+                        className="w-full h-[60vh] md:h-[70vh] relative"
                         style={{ overflow: 'hidden' }}
                     >
                         <div
@@ -140,7 +140,7 @@ function Home() {
                             className='rounded-full'
                             alt="" />
                         </div>
-                        <Link to="/eiger" className="w-full h-full items-center justify-between flex">
+                        <Link to="/shop/eiger adventure" className="w-full h-full items-center justify-between flex">
                             <div className="w-fit h-full flex flex-col justify-center">
                                 <h2 className='font-semibold text-md sm:text-lg'><FontAwesomeIcon icon={faCircleCheck} className='mr-2' />Eiger Adventure</h2>
                                 <p>Katapapang, Jawa Barat</p>

@@ -40,24 +40,24 @@ function CardSlider() {
         <div className="relative">
                     <button
                         onClick={scrollLeft}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white 
+                        className="absolute left-0 top-36 -translate-y-1/2 z-10 bg-white 
                         hover:bg-gray-50 p-2 rounded-xs cursor-pointer"
                     >
                         <FontAwesomeIcon icon={faChevronLeft} />
                     </button>
                     <div
                         ref={scrollRef}
-                        className={`w-full h-full pb-2 flex flex-row gap-2 sm:gap-8 overflow-x-auto 
+                        className={`w-full h-full pl-2 pb-2 flex flex-row gap-2 sm:gap-8 overflow-x-auto 
                         scroll-smooth hide-scrollbar`}
                         style={{ scrollBehavior: 'smooth' }}
                     >
                         {shuffledProducts.map((item) => (
-          <Card key={item.id} product={item} />
-        ))}
+                        <Card key={item.id} product={item} />
+                        ))}
                     </div>
                     <button
                         onClick={scrollRight}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white 
+                        className="absolute right-0 top-36 -translate-y-1/2 z-10 bg-white 
                         hover:bg-gray-50 p-2 rounded-xs cursor-pointer"
                     >
                         <FontAwesomeIcon icon={faChevronRight} />

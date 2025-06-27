@@ -25,7 +25,7 @@ function Cart() {
         <div className="relative bg-white">
             <Navbar />
             <div className="w-full min-h-screen flex justify-center px-6 py-24">
-                <div className="w-full sm:w-130 md:w-170 lg:w-212 h-full flex flex-col md:flex-row px-3">
+                <div className="w-full sm:w-130 md:w-170 lg:w-212 h-full flex flex-col md:flex-row sm:px-3">
                     <div className="w-full md:w-70 lg:w-90 h-auto mr-4">
                         <div className="w-full h-fit p-6 border bg-white border-gray-100 shadow-lg/10 
                             hover:shadow-lg/30 rounded-2xl flex flex-col gap-2 sticky top-24
@@ -66,7 +66,7 @@ function Cart() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex-1 h-full flex flex-col my-4 gap-6">
+                    <div className="flex-1 h-full flex flex-col my-6 sm:my-4 gap-6">
                         <div className="w-full h-fit">
                             <h2 className="text-lg font-semibold text-gray-700">Cart</h2>
                             <p className="text-sm">Menampilkan produk dalam keranjang</p>
