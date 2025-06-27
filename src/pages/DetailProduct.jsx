@@ -8,6 +8,7 @@ import Footer from '../components/Footer.jsx';
 import Comment from '../components/Comment.jsx';
 import CardSlider from '../components/CardSlider.jsx';
 import { useEffect, useState } from 'react';
+import { getPublicImagePath } from '../utils/getPublicImagePath';
 
 function DetailProduct() {
   const { id } = useParams();
@@ -63,7 +64,7 @@ const images = product.image ? Object.values(product.image) : [];
                         <div className="w-full flex-1 flex items-center justify-center p-1 shadow-lg rounded-lg">
                         {images[mainImgIdx] && (
                             <img
-                            src={images[mainImgIdx]}
+                            src={getPublicImagePath(images[mainImgIdx])}
                             alt={product.name}
                             className="min-h-auto ject-cover rounded-md"
                             />
@@ -76,7 +77,7 @@ const images = product.image ? Object.values(product.image) : [];
                                 className={`w-auto h-full border-2 ${mainImgIdx === idx ? 'border-gray-200' : 'border-white'} hover:border-gray-300 rounded-md cursor-pointer`}
                                 onClick={() => setMainImgIdx(idx)}
                                 >
-                                <img src={img} className="w-full h-full rounded-md" alt="" />
+                                <img src={getPublicImagePath(img)} className="w-full h-full rounded-md" alt="" />
                                 </button>
                             ))}
                         </div>
@@ -101,14 +102,16 @@ const images = product.image ? Object.values(product.image) : [];
                                     key={idx}
                                     className={`w-12 h-12 border-2 ${activeTypeIdx === idx ? 'border-gray-400' : 'border-gray-300'} rounded-md mx-1`}
                                     onClick={() => {
-                                       setActiveTypeIdx(idx);
+                                    setActiveTypeIdx(idx);
                                         if (t.image) {
-                                            const imgIdx = images.findIndex(img => img === t.image);
+                                            const imgIdx = images.findIndex(img =>
+                                                img.replace(/^\//, '') === t.image.replace(/^\//, '')
+                                            );
                                             setMainImgIdx(imgIdx !== -1 ? imgIdx : 0);
                                         }
                                     }}
                                     >
-                                    <img src={t.image} className="w-full h-full rounded-md cursor-pointer" alt={t.name} />
+                                        <img src={getPublicImagePath(t.image)} className="w-full h-full rounded-md cursor-pointer" alt={t.name} />
                                     </button>
                                 ))
                             }

@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faStar, faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import { getPublicImagePath } from '../utils/getPublicImagePath';
 
 function Comment() {
     const [showFullDesc2, setShowFullDesc2] = useState(false);
@@ -8,7 +9,7 @@ function Comment() {
     return (
         <div className="w-full h-full p-4 border border-gray-300 rounded-xl flex flex-col gap-3">
                             <div className="w-full h-full flex flex-row">
-                                <img src="/src/assets/foto.jpeg" alt="" className='w-12 h-auto rounded-full' />
+                                <img src={getPublicImagePath("foto.jpeg")} alt="" className='w-12 h-auto rounded-full' />
                                 <div className="flex-1 flex-row flex">
                                     <div className="flex-1 flex flex-col justify-left mx-3">
                                         <h2 className='text-md font-semibold text-gray-700'>Rizki M</h2>
@@ -29,8 +30,8 @@ function Comment() {
                                 </button>
                             </div>
                             <div className="w-full h-full flex flex-row justify-left gap-3 overflow-x-auto">
-                                <img src="/src/assets/foto.jpeg" alt="" className='w-12 h-12' />
-                                <img src="/src/assets/foto.jpeg" alt="" className='w-12 h-12' />
+                                <img src={getPublicImagePath("foto.jpeg")} alt="" className='w-12 h-12' />
+                                <img src={getPublicImagePath("foto.jpeg")} alt="" className='w-12 h-12' />
                             </div>
                             <div className="w-full h-full flex justify-between">
                                 <button className='text-sm py-1 cursor-pointer'>Lihat balasan<FontAwesomeIcon icon={faChevronDown} className='ml-2 text-xs' /></button>

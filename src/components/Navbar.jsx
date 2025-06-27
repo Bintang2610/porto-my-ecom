@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStore, faMagnifyingGlass, faHeart, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faStore, faMagnifyingGlass, faHeart, faCartShopping, faBars } from '@fortawesome/free-solid-svg-icons';
 import productData from '../assets/data/products.json';
 import category from '../assets/data/category.json';
 
@@ -11,6 +11,11 @@ function Navbar() {
     const [showSearchDropdown, setShowSearchDropdown] = useState(false);
     const timeoutRef = useRef(null);
     const navigate = useNavigate();
+    const [navDrop, setNavDrop ] = useState(false);
+
+    const toggleNav = () => {
+        setNavDrop((prev) => !prev);
+    };
 
     const handleMouseEnter = () => {
         clearTimeout(timeoutRef.current);
@@ -53,7 +58,8 @@ function Navbar() {
 
     return (
         <nav className='fixed top-0 right-0 left-0 z-50 w-full'>
-            <div className="w-full h-18 px-10 bg-white z-50 border-b border-gray-200 items-center justify-between flex gap-2">
+            <div className="w-full h-18 px-6 md:px-8 lg:px-10 bg-white z-50 border-b border-gray-200 items-center justify-between 
+            flex lg:gap-2">
                 <Link to="/" className='text-lg'>Packify</Link>
                 <div className="flex items-center gap-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                     <button className='w-12 p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
@@ -73,7 +79,7 @@ function Navbar() {
                             onFocus={() => setShowSearchDropdown(true)}
                             onBlur={handleSearchBlur}
                             onKeyDown={handleSearchKeyDown}
-                            className="w-90 text-sm my-4 py-2 pl-10 pr-3 border border-gray-300 rounded-md
+                            className="md:w-60 lg:w-90 text-sm my-4 py-2 pl-10 pr-3 border border-gray-300 rounded-md
                             focus:outline-none focus:ring-2 focus:ring-gray-400 transiiton-all duration-300"
                             placeholder="Cari..."
                         />
@@ -105,18 +111,23 @@ function Navbar() {
                         )}
                     </div>
                 </div>
-                <div className="flex items-center gap-1">
-                    <Link to="/wishlist" className='w-12 flex justify-center p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
-                    rounded-md transition-all duration-300'><FontAwesomeIcon icon={faHeart} /></Link>
-                    <Link to="/cart" className='w-12 flex justify-center p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
-                    rounded-md transition-all duration-300'><FontAwesomeIcon icon={faCartShopping} /></Link>
-                    <button className='w-20 text-sm ml-3 my-2 py-2 px-4 cursor-pointer border hover:border-3 
-                    border-gray-400 rounded-md transiiton-all duration-300'>Masuk</button>
+                <div className="flex flex-row items-center gap-1">
+                    <div className="w-fit h-auto items-center hidden md:flex flex-row justify-center gap-1">
+                        <Link to="/wishlist" className='w-12 h-auto flex justify-center p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
+                        rounded-md transition-all duration-300'><FontAwesomeIcon icon={faHeart} /></Link>
+                        <Link to="/cart" className='w-12 h-auto flex justify-center p-1 hover:py-4 hover:px-1 cursor-pointer text-gray-800 hover:bg-gray-200 
+                        rounded-md transition-all duration-300'><FontAwesomeIcon icon={faCartShopping} /></Link>
+                    </div>
+                    <div className="flex flex-row gap-2 items-center">
+                        <button className='w-20 text-sm md:ml-1 lg:ml-3 my-2 py-2 px-4 cursor-pointer border hover:border-3 
+                        border-gray-400 rounded-md transiiton-all duration-300'>Masuk</button>
+                        <button onMouseDown={toggleNav} className='block md:hidden w-10 h-10 text-lg hover:bg-gray-100 rounded-lg'><FontAwesomeIcon icon={faBars} /></button>
+                    </div>
                 </div>
             </div>
             {showDropdown && (
                 <div
-                    className="absolute left-0 right-0 top-18 z-10 w-full h-70 bg-white border-b border-gray-200 
+                    className="hidden md:hidden absolute left-0 right-0 top-18 z-10 w-full h-70 bg-white border-b border-gray-200 
                     rounded-bl rounded-br shadow-lg transition-all duration-300 flex justify-center px-10 py-6"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
@@ -147,6 +158,14 @@ function Navbar() {
                             </div>
                         </div>
                     </div>
+                </div>
+            )}
+            { navDrop && (
+                <div className="absolute left-0 right-0 top-18 z-10 w-full h-40 bg-white border-b border-gray-200 
+                rounded-bl rounded-br shadow-lg transition-all duration-300 flex flex-col gap-5 justify-center px-6 py-5">
+                    <Link to="/wishlist" className='w-full hover:text-gray-600'>Wishlist</Link>
+                    <div className="w-full h-1 border-t border-gray-300"></div>
+                    <Link to="/cart" className='w-full hover:text-gray-600'>Cart</Link>
                 </div>
             )}
         </nav>

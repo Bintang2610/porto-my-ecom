@@ -5,6 +5,16 @@ import Card from '../components/Card.jsx';
 
 import product from '../assets/data/products.json';
 
+function shuffleArray(array) {
+  // Copy array agar tidak merusak data asli
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 function CardSlider() {
 
     const scrollRef = useRef(null);
@@ -19,6 +29,12 @@ function CardSlider() {
             scrollRef.current.scrollBy({ left: 215, behavior: 'smooth' }); 
         }
     };
+
+    
+
+  // Acak produk hanya sekali saat komponen render pertama kali
+  const shuffledProducts = useRef(shuffleArray(product)).current;
+
 
     return (
         <div className="relative">
@@ -35,9 +51,9 @@ function CardSlider() {
                         scroll-smooth hide-scrollbar`}
                         style={{ scrollBehavior: 'smooth' }}
                     >
-                        {product.map((item) => (
-                            <Card key={item.id} product={item} />
-                        ))}
+                        {shuffledProducts.map((item) => (
+          <Card key={item.id} product={item} />
+        ))}
                     </div>
                     <button
                         onClick={scrollRight}

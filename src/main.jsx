@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   { path: '*', element: <NotFoundPage /> },
 ],
   {
-    basename: "/packify",
+    basename: "/porto-my-ecom/",
   }
 );
 
@@ -33,3 +33,4 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
+
