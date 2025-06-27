@@ -80,35 +80,41 @@ function Home() {
                     <div className="absolute bottom-1 w-full justify-center flex">
                         <div className="w-auto sm:w-130 md:w-170 lg:w-220 h-auto p-4 bg-[#FEFFFF] shadow rounded-xl border-gray-200 
                         flex flex-col gap-3 text-left mx-4 sm:mx-auto">
-                            <div className="w-full h-fit flex flex-row items-center px-3 gap-3">
+                            <div className="w-full h-fit flex flex-col sm:flex-row sm:items-center px-1 sm:px-3 gap-3">
                                 <h2 className='w-auto text-lg font-semibold text-gray-700'>Temukan semua kebutuhan jelajah Anda bersama kami!</h2>
-                                <Link to="/assistant" className='w-36 py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
-                                rounded-md border-2 hover:border-gray-200 transition-all duration-300'>
-                                    <FontAwesomeIcon icon={faRobot} className='mr-2 text-gray-500' />Packify Guide
-                                </Link>
+                                <div className="flex flex-row gap-3">
+                                    <Link to="/assistant" className='w-36 py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                                    rounded-md border-2 hover:border-gray-200 transition-all duration-300'>
+                                        <FontAwesomeIcon icon={faRobot} className='mr-2 text-gray-500' />Packify Guide
+                                    </Link>
+                                    <Link to="/category/all" className='block sm:hidden py-2 px-3 cursor-pointer bg-gray-900 hover:bg-gray-50 border-black text-sm 
+                                    rounded-full border-2 hover:border-gray-600 transition-all duration-300 text-white hover:text-black'>
+                                        <FontAwesomeIcon icon={faList} className='mr-2' />Kategori
+                                    </Link>
+                                </div>
                             </div>
-                            <div className="px-2 w-full h-fit flex items-center justify-between">
-                                <Link to="/category/tenda" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                            <div className="hidden sm:flex px-2 w-full h-fit items-center justify-between">
+                                <Link to="/category/tenda" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-xs sm:text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faTent} className='mr-2 text-red-400' />Tenda
                                 </Link>
-                                <Link to="/category/jaket" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                                <Link to="/category/jaket" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300  text-xs sm:text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faShirt} className='mr-2 text-blue-800' />Jaket
                                 </Link>
-                                <Link to="/category/set makan" className='hidden md:block py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                                <Link to="/category/set makan" className='hidden md:block py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300  text-xs sm:text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faKitchenSet} className='mr-2 text-yellow-500' />Perlengkapan makan
                                 </Link>
-                                <Link to="/category/peralatan survival" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                                <Link to="/category/peralatan survival" className='py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300  text-xs sm:text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faToolbox} className='mr-2 text-gray-700' />Peralatan survival
                                 </Link>
-                                <Link to="/category/tas" className='hidden lg:block py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300 text-sm 
+                                <Link to="/category/tas" className='hidden lg:block py-2 px-3 cursor-pointer hover:bg-gray-200 border-gray-300  text-xs sm:text-sm 
                                 rounded-full border-2 hover:border-gray-200 transition-all duration-300'>
                                     <FontAwesomeIcon icon={faBagShopping} className='mr-2 text-green-600' />Ransel & tas 
                                 </Link>
-                                <Link to="/category/all" className='py-2 px-3 cursor-pointer bg-gray-900 hover:bg-gray-50 border-black text-sm 
+                                <Link to="/category/all" className='py-2 px-3 cursor-pointer bg-gray-900 hover:bg-gray-50 border-black  text-xs sm:text-sm 
                                 rounded-full border-2 hover:border-gray-600 transition-all duration-300 text-white hover:text-black'>
                                     <FontAwesomeIcon icon={faList} className='mr-2' />Kategori
                                 </Link>
@@ -117,44 +123,45 @@ function Home() {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-full py-6 flex justify-center">
-                <div className="w-212 h-full flex flex-col text-left gap-y-4">
-                    <div className="w-full px-3 flex flex-row">
+            <div className="w-full h-full lg:mx-auto sm:px-6 py-6 flex justify-center">
+                <div className="w-full sm:w-130 md:w-170 lg:w-212 h-full flex flex-col text-left gap-y-4">
+                    <div className="w-full px-6 sm:px-3 flex flex-row">
                         <h2 className='text-lg font-semibold text-gray-600'>Baru-baru ini anda lihat</h2>
                     </div>
                     <CardSlider />
                 </div>
             </div>
             <div className="w-full h-full flex justify-center my-6">
-                <div className="w-230 flex flex-col border border-gray-200 rounded-3xl p-8 bg-white gap-6 shadow hover:shadow-lg/20 transition-all duration-300">
-                    <div className="w-full h-full flex flex-row items-center gap-5 px-2">
-                        <div className="w-18 h-auto">
+                <div className="w-full sm:w-130 md:w-170 lg:w-230 flex flex-col border border-gray-200 sm:rounded-3xl 
+                py-6 sm:py-8 sm:px-8 bg-white gap-6 shadow hover:shadow-lg/20 transition-all duration-300">
+                    <div className="w-full h-full flex flex-row items-center gap-3 sm:gap-5 px-6 sm:px-2 pt-2">
+                        <div className="w-14 sm:w-18 h-auto">
                             <img src="https://d1yutv2xslo29o.cloudfront.net/product/variant/photo/910004506_ORANGE_2_885c.jpg" 
                             className='rounded-full'
                             alt="" />
                         </div>
-                        <div className="w-full h-full items-center justify-between flex">
+                        <Link to="/eiger" className="w-full h-full items-center justify-between flex">
                             <div className="w-fit h-full flex flex-col justify-center">
-                                <h2 className='font-semibold text-lg'><FontAwesomeIcon icon={faCircleCheck} className='mr-2' />Eiger Adventure</h2>
+                                <h2 className='font-semibold text-md sm:text-lg'><FontAwesomeIcon icon={faCircleCheck} className='mr-2' />Eiger Adventure</h2>
                                 <p>Katapapang, Jawa Barat</p>
                             </div>
-                            <div className="w-30 h-10 flex items-center justify-center">
+                            <div className="hidden sm:flex w-30 h-10 items-center justify-center">
                                 <Link to="/Eiger" className='text-sm font-semibold text-gray-600 flex items-center justify-center border 
                                 border-gray-200 rounded-md py-2 px-3 hover:bg-gray-200 transition-all duration-300'>
                                     Lihat toko<FontAwesomeIcon icon={faArrowRight} className='ml-2' />
                                 </Link>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                     <CardSlider />
                 </div>
             </div>
             <div className="w-full h-full flex justify-center mb-18">
-                <div className="w-214 h-full flex flex-col text-left gap-y-4">
+                <div className="w-auto sm:w-130 md:w-170 lg:w-214 h-full flex flex-col text-left gap-y-4">
                     <div className="w-full px-3 pt-2 flex flex-row">
                         <h2 className='text-lg font-semibold text-gray-600'>Rekomendasi</h2>
                     </div>
-                    <div className="w-full grid grid-cols-4 gap-4">
+                    <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                         {product.map((item) => (
                             <Card key={item.id} product={item} />
                         ))}

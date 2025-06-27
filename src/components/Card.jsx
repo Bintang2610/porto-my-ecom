@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ product, ...props }) {
     return (
-        <Link to={`/product/${product.id}`} className='w-48 h-80 flex items-end'>
+        <Link to={`/product/${product.id}`} className='w-40 sm:w-48 h-auto sm:h-80 flex items-end'>
             <div className="w-full h-78 flex flex-col cursor-pointer border border-gray-200 hover:mb-1 hover:shadow-lg/30 transition-all duration-300 rounded-2xl bg-white" {...props}>
                 <div className="relative w-full h-46">
                     <img src={product.image?.image1} alt="" 
@@ -16,8 +16,8 @@ function Card({ product, ...props }) {
                 </div>
                 <div className="flex-1 flex flex-col text-left py-2 px-3 mb-1 space-y-1 border-t border-gray-200">
                     <h2 className='text-md w-40 h-fit line-clamp-2'>{product.name}</h2>
-                    <p className='font-semibold'>Rp {product.price.toLocaleString()}</p>
-                    <p className='text-sm flex items-center w-36 truncate'>
+                    <p className='text-sm sm:text-md font-semibold'>Rp {product.price.toLocaleString()}</p>
+                    <p className='text-xs sm:text-sm flex items-center w-36 truncate'>
                         <FontAwesomeIcon icon={faCircleCheck} className='mr-1' />{product.brand?.name}
                     </p>
                 </div>

@@ -58,19 +58,19 @@ const images = product.image ? Object.values(product.image) : [];
     <div className='relative bg-white'>
         <Navbar />
         <div className="w-full h-full flex flex-col py-18">
-            <div className="w-220 mx-auto h-full flex flex-row gap-10">
-                <div className="w-1/2 h-auto">
-                    <div className="w-full h-[86vh] flex flex-col sticky pt-4 top-18">
+            <div className="w-full md:w-170 lg:w-220 px-6 md:px-0 md:mx-auto h-full flex flex-col sm:flex-row gap-1 sm:gap-6 md:gap-10">
+                <div className="w-full md:w-1/2 h-auto">
+                    <div className="w-full h-full sm:h-[86vh] flex flex-col sticky pt-4 top-18">
                         <div className="w-full flex-1 flex items-center justify-center p-1 shadow-lg rounded-lg">
                         {images[mainImgIdx] && (
                             <img
                             src={getPublicImagePath(images[mainImgIdx])}
                             alt={product.name}
-                            className="min-h-auto ject-cover rounded-md"
+                            className="h-[40vh] object-contain rounded-lg"
                             />
                         )}
                         </div>
-                        <div className="w-full h-[12vh] flex flex-row justify-center gap-2 p-2">
+                        <div className="w-full h-18 sm:h-[12vh] flex flex-row justify-center gap-2 p-2">
                             {images.map((img, idx) => (
                                 <button
                                 key={idx}
@@ -83,7 +83,7 @@ const images = product.image ? Object.values(product.image) : [];
                         </div>
                     </div>
                 </div>
-                <div className='w-1/2 h-full py-10 flex flex-col gap-y-3'>
+                <div className='w-full md:w-1/2 h-full py-4 sm:py-10 flex flex-col gap-y-3'>
                     <div className="w-full flex flex-row justify-between items-center">
                         <Link to={`/${product.category}`} className="text-xs py-1 px-3 bg-gray-200 rounded-md font-semibold text-gray-600">{product.category}</Link>
                         <button className='text-md flex flex-row items-center cursor-pointer'><FontAwesomeIcon icon={faStar} className='text-sm text-yellow-300 mr-2' />{product.rating}/5</button>
@@ -155,19 +155,19 @@ const images = product.image ? Object.values(product.image) : [];
                     </div>
                     <div className="w-full h-full">
                         <div className="w-full h-full flex flex-row items-center border-2 border-gray-200 rounded-xl p-4">
-                            <img src={product.brand?.image} className='w-14 h-auto rounded-full' alt="" />
-                            <div className="flex-1 flex flex-row items-center justify-between pl-4">
+                            <img src={product.brand?.image} className='w-10 lg:w-14 h-auto rounded-full' alt="" />
+                            <Link to="/eiger" className="flex-1 flex flex-row items-center justify-between pl-4">
                                 <div className="w-fit">
-                                    <h2 className='font-semibold text-md'>
-                                        <FontAwesomeIcon icon={faCircleCheck} className='mr-2' />Eiger Adventure
+                                    <h2 className='font-semibold text-sm lg:text-md'>
+                                        <FontAwesomeIcon icon={faCircleCheck} className='mr-1 md:mr-2' />Eiger Adventure
                                     </h2>
-                                    <p className='text-sm'>Katapapang, Jawa Barat</p>
+                                    <p className='text-xs lg:text-sm'>Katapapang, Jawa Barat</p>
                                 </div>
-                                <Link to="/Eiger" className='text-sm font-semibold text-gray-600 flex items-center justify-center border 
+                                <Link to="/Eiger" className='hidden md:flex text-sm font-semibold text-gray-600 items-center justify-center border 
                                 border-gray-200 rounded-md py-2 px-3 hover:bg-gray-200 transition-all duration-300'>
                                     Lihat toko<FontAwesomeIcon icon={faArrowRight} className='ml-2' />
                                 </Link>
-                            </div>
+                            </Link>
                         </div>
                     </div>
                     <div className="w-full h-full flex flex-col text-left gap-y-2">
@@ -185,8 +185,8 @@ const images = product.image ? Object.values(product.image) : [];
                     </div>
                 </div>
             </div>
-            <div className="w-220 h-full mx-auto flex gap-10">
-                <div className="w-1/2 h-auto py-4">
+            <div className="w-full md:w-170 px-6 md:px-0 lg:w-220 h-full mx-auto flex flex-col sm:flex-row gap-1 md:gap-8 lg:gap-10">
+                <div className="w-full sm:w-1/2 h-auto sm:py-4">
                     <div className="w-full bg-white shadow-lg/20 rounded-4xl sticky top-22 py-6 flex flex-col gap-4">
                         <div className="w-full flex flex-col gap-2 px-6">
                             <h2 className='text-md font-semibold'>Rating produk</h2>
@@ -196,29 +196,29 @@ const images = product.image ? Object.values(product.image) : [];
                             <p>24 rating - 12 ulasan</p>
                         </div>
                         <div className="w-full h-full flex flex-wrap px-6 gap-4">
-                            <button className='cursor-pointer py-1 px-3 border-2 border-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full'>Semua</button>
-                            <button className='cursor-pointer py-1 px-3 border-2 border-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full'>Dengan media (12)</button>
+                            <button className='cursor-pointer py-1 px-3 border-2 border-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full text-sm md:text-md'>Semua</button>
+                            <button className='cursor-pointer py-1 px-3 border-2 border-gray-600 bg-gray-100 hover:bg-gray-200 rounded-full text-sm md:text-md'>Dengan media (12)</button>
                         </div>
                         <div className="w-full h-full flex flex-wrap px-6 gap-4">
-                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center'>
+                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center text-sm md:text-md'>
                                 <FontAwesomeIcon icon={faStar} className='text-xs mr-2' />5 (4)
                             </button>
-                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center'>
+                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center text-sm md:text-md'>
                                 <FontAwesomeIcon icon={faStar} className='text-xs mr-2' />4 (2)
                             </button>
-                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center'>
+                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center text-sm md:text-md'>
                                 <FontAwesomeIcon icon={faStar} className='text-xs mr-2' />3 (2)
                             </button>
-                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center'>
+                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center text-sm md:text-md'>
                                 <FontAwesomeIcon icon={faStar} className='text-xs mr-2' />2 (2)
                             </button>
-                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center'>
+                            <button className='cursor-pointer py-1 px-3 bg-white hover:bg-gray-100 border border-gray-400 rounded-full flex items-center text-sm md:text-md'>
                                 <FontAwesomeIcon icon={faStar} className='text-xs mr-2' />1 (2)
                             </button>
                         </div>
                     </div>
                 </div>
-                <div className="w-1/2 h-full flex flex-col gap-4 py-8">
+                <div className="w-full sm:w-1/2 h-full flex flex-col gap-4 py-8">
                     <div className="w-full h-full flex flex-row items-center">
                         <div className="flex-1">
                             <h2 className='text-lg font-semibold'>Ulasan produk</h2>
@@ -242,8 +242,8 @@ const images = product.image ? Object.values(product.image) : [];
                     </div>
                 </div>
             </div>
-            <div className="w-212 h-full mx-auto flex flex-col text-left my-12">
-                <div className="w-full px-3 flex flex-row">
+            <div className="w-full sm:w-130 md:w-170 lg:w-212 h-full mx-auto flex flex-col text-left my-12 gap-6">
+                <div className="w-full px-6 sm:px-3 flex flex-row">
                     <h2 className='text-lg font-semibold text-gray-600'>Pilihan lainnya untukmu</h2>
                 </div>
                 <CardSlider />
