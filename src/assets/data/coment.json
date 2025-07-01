@@ -1,0 +1,23 @@
+[
+  {
+    "nama": "Dian Permata",
+    "tanggal": "2025-06-28",
+    "rating": 5,
+    "deskripsi": "Barangnya bagus banget! Sesuai deskripsi, pengiriman juga cepat. Terima kasih!",
+    "foto": "https://randomuser.me/api/portraits/women/12.jpg"
+  },
+  {
+    "nama": "Rizky Aditya",
+    "tanggal": "2025-06-27",
+    "rating": 4,
+    "deskripsi": "Produk oke, kualitas sesuai harga. Hanya saja packaging kurang rapi.",
+    "foto": "https://randomuser.me/api/portraits/men/22.jpg"
+  },
+  {
+    "nama": "Sinta Dewi",
+    "tanggal": "2025-06-25",
+    "rating": 5,
+    "deskripsi": "Suka banget sama produknya! Warna dan ukuran pas. Bakal order lagi nanti.",
+    "foto": "https://randomuser.me/api/portraits/women/45.jpg"
+  }
+]

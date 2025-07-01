@@ -9,6 +9,7 @@ import Comment from '../components/Comment.jsx';
 import CardSlider from '../components/CardSlider.jsx';
 import { useEffect, useState } from 'react';
 import { getPublicImagePath } from '../utils/getPublicImagePath';
+import commentData from '../assets/data/coment.json';
 
 function DetailProduct() {
   const { id } = useParams();
@@ -44,9 +45,8 @@ function DetailProduct() {
 
 const fourthDate = getFourthDate();
 
-const comments = [<Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />, <Comment />];
+const comments = commentData.filter(c => c.productId === product.id);
 const commentsPerPage = 4;
-
 const totalPages = Math.ceil(comments.length / commentsPerPage);
 const startIdx = (page - 1) * commentsPerPage;
 const endIdx = startIdx + commentsPerPage;
@@ -227,7 +227,9 @@ const images = product.image ? Object.values(product.image) : [];
                         <button className='cursor-pointer border border-gray-400 rounded-md py-2 px-5 text-sm'>Terbaru<FontAwesomeIcon icon={faChevronDown} className='ml-2' /></button>
                     </div>
                     <div className="w-full h-full flex flex-col gap-4">
-                    {currentComments}
+                    {currentComments.map((c, idx) => (
+  <Comment key={idx} data={c} />
+))}
                     <div className="w-full justify-center flex gap-2 mt-2">
                         {Array.from({ length: totalPages }, (_, i) => (
                         <button

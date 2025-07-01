@@ -23,7 +23,7 @@
         "stock" : 12
       }
     },
-    "rating": 0,
+    "rating": 5,
     "sold": 200
   },
   {
@@ -50,7 +50,7 @@
         "stock" : 12
       }
     },
-    "rating": 0,
+    "rating": 5,
     "sold": 24
   },
   {
@@ -75,7 +75,7 @@
         "stock" : 12
       }
     },
-    "rating": 0,
+    "rating": 5,
     "sold": 0
   },
   {
@@ -107,7 +107,7 @@
         "stock" : 6
       }
     },
-    "rating": 0,
+    "rating": 5,
     "sold": 12
   },
   {
@@ -133,7 +133,7 @@
         "stock" : 12
       }
     },
-    "rating": 0,
+    "rating": 5,
     "sold": 2
   },
   {
@@ -165,7 +165,7 @@
         "stock" : 8
       }
     },
-    "rating": 0,
+    "rating": 5,
     "sold": 2
   },
   {
@@ -192,7 +192,7 @@
       }
     },
     "gender" : "Woman",
-    "rating": 0,
+    "rating": 5,
     "sold": 2
   }
 ]

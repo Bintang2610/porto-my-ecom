@@ -72,10 +72,6 @@ function Cart() {
                             <p className="text-sm">Menampilkan produk dalam keranjang</p>
                         </div>
                         <div className="w-full h-full flex flex-col gap-4">
-                            <CartCard />
-                            <CartCard />
-                            <CartCard />
-                            <CartCard />
                         </div>
                     </div>
                 </div>
